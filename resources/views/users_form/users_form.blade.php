@@ -33,7 +33,7 @@
                 <tr class="text-center">
                     <th>#</th>
                     <th>คำถาม</th>
-                    <th>คะแนนความพึงพอใจ (1-5)</th>
+                    <th>คะแนนความพึงพอใจ 1-5</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,9 +54,7 @@
             </tbody>
         </table>
 
-        <br>
-
-        <button type="submit" class="btn btn-primary">ส่งการประเมิน</button>
+        <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> ส่งการประเมิน</button>
     </form>
 
 </div>
