@@ -1,6 +1,16 @@
 @extends('layout.admin_layout')
 @section('admin_layout')
 
+@if ($message = Session::get('success'))
+<script>
+    Swal.fire({
+        icon: 'success'
+        , title: '{{ $message }}'
+    , })
+
+</script>
+@endif
+
 <div class="container">
     <h2 class="text-center">ข้อมูลหน่วยงาน</h2>
 
@@ -12,13 +22,13 @@
     <br>
 
     <!-- ตารางแสดงผลข้อมูลหน่วยงาน -->
-    <table class="table table-bordered table-striped">
+    <table class="table  table-bordered table-striped">
         <thead>
             <tr class="text-center">
                 <th>#</th>
                 <th>ชื่อหน่วยงาน</th>
                 <th>เวลาที่เพิ่ม</th>
-                <th>เวลาที่อัพเดทล่าสุด</th>
+                {{-- <th>เวลาที่อัพเดทล่าสุด</th> --}}
                 <th>จัดการ</th>
             </tr>
         </thead>
@@ -32,8 +42,8 @@
                     <tr>
                         <td class="text-center">{{ $index + 1 }}</td>
                         <td>{{ $agency->name }}</td>
-                        <td class="text-center">{{ $agency->created_at->format('d/m/Y H:i:s') }}</td>
-                        <td class="text-center">{{ $agency->updated_at->format('d/m/Y H:i:s') }}</td>
+                        <td class="text-center">{{ $agency->created_at->format('d/m/Y') }}</td>
+                        {{-- <td class="text-center">{{ $agency->updated_at->format('d/m/Y H:i:s') }}</td> --}}
                         <td class="text-center">
                             {{-- <a href="{{ route('agencies.edit', $agency->id) }}" class="btn btn-warning btn-sm">แก้ไข</a>
                             <form action="{{ route('agencies.destroy', $agency->id) }}" method="POST" style="display:inline;">

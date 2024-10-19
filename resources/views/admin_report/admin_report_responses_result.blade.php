@@ -16,7 +16,7 @@
             @foreach ($questions as $question)
             <tr>
                 <td>{{ $question->question_text }}</td>
-                <td>{{ $question->responses_sum_score ?? 0 }}</td> <!-- แสดงคะแนนรวม -->
+                <td>{{ $question->responses_sum_score ?? 0 }} คะแนน</td> <!-- แสดงคะแนนรวม -->
             </tr>
             @endforeach
         </tbody>

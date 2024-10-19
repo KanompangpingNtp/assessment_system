@@ -21,4 +21,9 @@ class Response extends Model
     {
         return $this->belongsTo(Question::class);
     }
+
+    public function agency()
+    {
+        return $this->belongsTo(Agency::class);
+    }
 }

@@ -2,7 +2,7 @@
 @section('admin_layout')
 
 <div class="container">
-    <h2>จัดการคำถามแบบประเมิน</h2>
+    <h2 class="text-center">จัดการคำถามแบบประเมิน</h2><br>
 
     @if ($message = Session::get('success'))
     <script>
@@ -22,7 +22,7 @@
 
     <!-- ตรวจสอบว่ามีคำถามหรือไม่ -->
     @if($questions->isEmpty())
-        <p>ยังไม่มีคำถามในขณะนี้</p>
+        <p class="text-center">ยังไม่มีคำถามในขณะนี้</p>
     @else
         <table class="table table-bordered table-striped">
             <thead>
@@ -49,8 +49,12 @@
                         <td>{{ $question->created_at->format('d/m/Y') }}</td>
                         <td>
                             <!-- ปุ่มแก้ไขและลบ -->
-                            <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal{{ $question->id }}">แก้ไข</a>
-                            <a href="#" class="btn btn-danger btn-sm">ลบ</a>
+                            <a class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal {{ $question->id }}">แก้ไข</a>
+                            <form action="{{ route('questions.delete', $question->id) }}" method="post" style="display:inline-block;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('คุณแน่ใจหรือว่าต้องการลบคำถามนี้?')">ลบ</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

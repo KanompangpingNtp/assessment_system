@@ -144,7 +144,8 @@ public function exportResponses(Request $request)
     // เขียนข้อมูลของแต่ละคำถาม
     foreach ($questions as $question) {
         // คำนวณคะแนนรวมของคำถามเฉพาะหน่วยงานที่เลือก
-        $totalScore = $question->responses->where('agency_id', $agencyId)->sum('score');
+        // $totalScore = $question->responses->where('agency_id', $agencyId)->sum('score');
+        $totalScore = $question->responses->where('agency_id', $agencyId)->sum('score') . ' คะแนน';
         $updatedAt = $question->responses->where('agency_id', $agencyId)->max('updated_at') ?
         $question->responses->where('agency_id', $agencyId)->max('updated_at')->format('d/m/Y H:i:s') : 'N/A';
 

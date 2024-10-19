@@ -14,12 +14,12 @@ class ResponsesController extends Controller
     // ฟังก์ชันแสดงผลข้อมูล Responses
     public function responsesIndex()
     {
-        // ดึงข้อมูล Responses ทั้งหมดจากฐานข้อมูล
-        $responses = Response::with('question')->get(); // ดึงพร้อมข้อมูลคำถามที่เกี่ยวข้อง
+        // ดึงข้อมูล Responses ทั้งหมดจากฐานข้อมูล พร้อมกับข้อมูลคำถามและหน่วยงาน โดยแบ่งหน้าแสดงครั้งละ 20 แถว
+        $responses = Response::with(['question', 'agency'])->paginate(20); // เปลี่ยนจาก get() เป็น paginate(20)
 
-        // ส่งข้อมูล Responses ไปยัง view
         return view('admin_responses.admin_responses', compact('responses'));
     }
+
 
     public function store(Request $request)
     {

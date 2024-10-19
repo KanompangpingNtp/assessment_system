@@ -53,4 +53,18 @@ class QuestionsController extends Controller
         return redirect()->back()->with('success', 'แก้ไขคำถามสำเร็จแล้ว!');
     }
 
+    public function deleteQuestion($id)
+    {
+        $question = Question::findOrFail($id);
+
+        // ลบ responses ที่เชื่อมโยงกับคำถามนี้
+        $question->responses()->delete();
+
+        // ลบคำถาม
+        $question->delete();
+
+        return redirect()->back()->with('success', 'ลบคำถามสำเร็จแล้ว!');
+    }
+
+
 }

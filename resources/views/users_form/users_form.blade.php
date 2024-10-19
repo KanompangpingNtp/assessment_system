@@ -2,7 +2,7 @@
 @section('user_layout')
 
 <div class="container">
-    <h2 class="text-center">แบบประเมิน</h2>
+    {{-- <h2 class="text-center">แบบประเมิน</h2> --}}
 
     <form action="{{ route('responses.store') }}" method="POST">
         @csrf
@@ -54,7 +54,9 @@
             </tbody>
         </table>
 
-        <button type="submit" class="btn btn-primary">บันทึกผลการประเมิน</button>
+        <br>
+
+        <button type="submit" class="btn btn-primary">ส่งการประเมิน</button>
     </form>
 
 </div>

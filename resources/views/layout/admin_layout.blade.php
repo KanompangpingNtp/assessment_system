@@ -52,35 +52,35 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
+            <div class="sidebar-heading">
+                แสดงบันทึก
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('report.responses.index')}}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>ผลการประเมิน</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('responsesIndex')}}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>ประวัติการทำแบบประเมิน</span></a>
+            </li>
+
             <!-- Heading -->
             <div class="sidebar-heading">
                 จัดการข้อมูล
             </div>
 
-            <!-- Nav Item - Charts -->
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('questionsIndex')}}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>question</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>responses</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('report.responses.index')}}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>report-responses</span></a>
-            </li>
-
             <li class="nav-item">
                 <a class="nav-link" href="{{route('indexAgency')}}">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>agency</span></a>
+                    <span>จัดการกองงาน</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('questionsIndex')}}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>จัดการคำถามแบบประเมิน</span></a>
             </li>
 
             <!-- Divider -->
@@ -211,7 +211,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                    <form id="logout-form" action="" method="POST" style="display: none;">
+                    <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
                         @csrf
                     </form>
                 </div>
