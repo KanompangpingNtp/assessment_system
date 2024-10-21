@@ -68,7 +68,7 @@
                     <div class="card mt-5">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <span>
-                                <h3><i class="bi bi-list-columns"></i> แบบประเมิน</h3>
+                                <h3><i class="bi bi-list-columns"></i> แบบประเมินความพึงพอใจ</h3>
                             </span>
                         </div>
 
