@@ -2,6 +2,7 @@
 @section('admin_layout')
 
 <div class="container">
+    <a href="{{route('report.responses.index')}}" class="btn btn-primary btn-sm" >กลับหน้าเดิม</a><br><br>
     <h2>ผลการประเมินคะแนน สำหรับหน่วยงาน: {{ $agencyName }}</h2>
     <p>จำนวนครั้งที่ทำแบบประเมิน: {{ $submissionCount }} (เดือน : {{ $month }}, ปี : {{ $year }})</p>
 

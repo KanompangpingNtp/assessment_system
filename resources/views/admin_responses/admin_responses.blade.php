@@ -26,8 +26,8 @@
                 <td>{{ $response->question->question_text }}</td>
                 <td>{{ $response->agency->name ?? 'ไม่ระบุ' }}</td>
                 <td class="text-center">{{ $response->score }}</td>
-                <td class="text-center">{{ $response->user_name ?? 'ไม่ระบุ' }}</td>
-                <td class="text-center">{{ $response->user_phone ?? 'ไม่ระบุ' }}</td>
+                <td class="text-center">{{ $response->name ?? 'ไม่ระบุ' }}</td>
+                <td class="text-center">{{ $response->phone ?? 'ไม่ระบุ' }}</td>
                 <td class="text-center">{{ $response->created_at->format('d/m/Y') }}</td>
             </tr>
             @endforeach

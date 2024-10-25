@@ -33,8 +33,8 @@ class ResponsesController extends Controller
             Response::create([
                 'question_id' => $questionId,
                 'score' => $rating,
-                'user_name' => $request->input('name') ?? null,
-                'user_phone' => $request->input('phone') ?? null,
+                'name' => $request->input('name') ?? null,
+                'phone' => $request->input('phone') ?? null,
                 'agency_id' => $request->input('agency_id'),
             ]);
         }
